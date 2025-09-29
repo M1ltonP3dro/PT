@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeAgenda - Notificações</title>
+    <link rel="stylesheet" href="notificacoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="admin-panel">
+    <div class="admin-sidebar">
+      <div class="admin-logo">
+        Saúde<span>Agenda</span>
+      </div>
+
+      <div class="admin-user">
+        <div class="admin-user-info">
+          <h4>Dr. Benedito Kapolo</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <ul>
+          <li>
+            <i class="nav-icon">📅</i>
+            <span>Agendamentos</span>
+          </li>
+         
+          <li>
+            <i class="nav-icon">👨‍⚕</i>
+            <span>Profissionais</span>
+          </li>
+          <li>
+            <i class="nav-icon">👥</i>
+            <span>Pacientes</span>
+          </li>
+          <li class="active">
+            <i class="nav-icon">🔔</i>
+            <span>Notificações</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="admin-logout">
+        <button class="logout-button">
+          <i class="logout-icon">🚪</i>
+          <span>Sair</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-main">
+      <header class="admin-header">
+        <div class="header-actions">
+          <div class="notification-bell">
+            🔔
+            <span class="notification-badge">3</span>
+          </div>
+        </div>
+      </header>  
+      
+      <div class="content-wrapper">
+        <div class="content-header">
+          <h2>Notificações</h2>
+          <div class="notification-actions">
+            <button class="btn btn-secondary"><i class="fas fa-check-double"></i> Marcar todas como lidas</button>
+            <button class="btn btn-primary"><i class="fas fa-cog"></i> Configurações</button>
+          </div>
+        </div>
+        
+        <div class="search-filter-container">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquisar notificações...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          
+          <div class="filter-buttons">
+            <button class="filter-btn active">Todas</button>
+            <button class="filter-btn">Não lidas</button>
+            <button class="filter-btn">Agendamentos</button>
+            <button class="filter-btn">Sistema</button>
+          </div>
+        </div>
+        
+        <div class="notifications-container">
+          <div class="notification-item unread">
+            <div class="notification-icon appointment">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Nova consulta agendada</h4>
+                <span class="notification-time">Hoje, 10:30</span>
+              </div>
+              <p>Ana Silva agendou uma consulta com Dr. Manuel Santos para 05/06/2025 às 14:00.</p>
+              <div class="notification-actions">
+                <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i> Ver detalhes</button>
+                <button class="action-btn mark-read" title="Marcar como lida"><i class="fas fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-item unread">
+            <div class="notification-icon system">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Alerta de sistema</h4>
+                <span class="notification-time">Hoje, 09:15</span>
+              </div>
+              <p>Backup automático concluído com sucesso. Todos os dados foram salvos.</p>
+              <div class="notification-actions">
+                <button class="action-btn mark-read" title="Marcar como lida"><i class="fas fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-item unread">
+            <div class="notification-icon reminder">
+              <i class="fas fa-bell"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Lembrete de consulta</h4>
+                <span class="notification-time">Hoje, 08:45</span>
+              </div>
+              <p>Lembrete: Dr. António Costa tem 5 consultas agendadas para hoje.</p>
+              <div class="notification-actions">
+                <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i> Ver detalhes</button>
+                <button class="action-btn mark-read" title="Marcar como lida"><i class="fas fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-item">
+            <div class="notification-icon cancellation">
+              <i class="fas fa-calendar-times"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Consulta cancelada</h4>
+                <span class="notification-time">Ontem, 15:20</span>
+              </div>
+              <p>João Pereira cancelou a consulta agendada para 02/06/2025 às 10:30 com Dra. Luísa Mendes.</p>
+              <div class="notification-actions">
+                <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i> Ver detalhes</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-item">
+            <div class="notification-icon appointment">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Nova consulta agendada</h4>
+                <span class="notification-time">31/05/2025, 14:10</span>
+              </div>
+              <p>Maria Fernandes agendou uma consulta com Dr. António Costa para 03/06/2025 às 11:45.</p>
+              <div class="notification-actions">
+                <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i> Ver detalhes</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-item">
+            <div class="notification-icon system">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <div class="notification-content">
+              <div class="notification-header">
+                <h4>Novo paciente registado</h4>
+                <span class="notification-time">31/05/2025, 11:30</span>
+              </div>
+              <p>Paulo Ribeiro foi registado como novo paciente no sistema.</p>
+              <div class="notification-actions">
+                <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i> Ver perfil</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pagination">
+          <button class="page-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      
+      <!-- Modal para configurações de notificações -->
+      <div class="modal" id="notification-settings-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Configurações de Notificações</h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="notification-settings-form">
+              <div class="settings-section">
+                <h4>Receber notificações para:</h4>
+                
+                <div class="form-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Novos agendamentos</span>
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Cancelamentos de consultas</span>
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Lembretes de consultas</span>
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Novos pacientes</span>
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Alertas do sistema</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="settings-section">
+                <h4>Preferências de exibição:</h4>
+                
+                <div class="form-group">
+                  <label for="notification-display-count">Número de notificações por página:</label>
+                  <select id="notification-display-count">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="notification-sort">Ordenar por:</label>
+                  <select id="notification-sort">
+                    <option value="newest">Mais recentes primeiro</option>
+                    <option value="oldest">Mais antigas primeiro</option>
+                    <option value="unread">Não lidas primeiro</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="btn btn-cancel">Cancelar</button>
+                <button type="submit" class="btn btn-save">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal para detalhes da notificação -->
+      <div class="modal" id="notification-detail-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Detalhes da Notificação</h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="notification-detail">
+              <div class="detail-header">
+                <div class="detail-icon appointment">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="detail-title">
+                  <h4>Nova consulta agendada</h4>
+                  <span class="detail-time">Hoje, 10:30</span>
+                </div>
+              </div>
+              
+              <div class="detail-content">
+                <p>Ana Silva agendou uma consulta com Dr. Manuel Santos para 05/06/2025 às 14:00.</p>
+                
+                <div class="detail-info">
+                  <div class="info-item">
+                    <span class="info-label">Paciente:</span>
+                    <span class="info-value">Ana Silva</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Médico:</span>
+                    <span class="info-value">Dr. Manuel Santos</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Especialidade:</span>
+                    <span class="info-value">Cardiologia</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Data:</span>
+                    <span class="info-value">05/06/2025</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Hora:</span>
+                    <span class="info-value">14:00</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Motivo:</span>
+                    <span class="info-value">Consulta de rotina</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="detail-actions">
+                <button class="btn btn-secondary">Ver agendamento</button>
+                <button class="btn btn-primary">Marcar como lida</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+<script src="js/notificacoes.js"></script>

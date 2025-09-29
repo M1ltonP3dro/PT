@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeAgenda - Agendamentos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+       
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Saúde<span>Agenda</span></h1>
+            </div>
+            
+            <div class="admin-info">
+                <div class="admin-details">
+                    <h3>Dr. Benedito Kapolo</h3>
+                    <p>Administrador</p>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#"> Agendamentos</a>
+                    </li>
+                    <li>
+                 <a> Profissionais</a>
+                    </li>
+                    <li>
+                    
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="top-bar">
+               
+            </header>
+            
+            <section class="content-area">
+                <div class="page-header">
+                    <h2>Agendamentos</h2>
+                    <div class="actions">
+                        <button class="btn btn-primary"><i class="fas fa-plus"></i> Nova Consulta</button>
+                    </div>
+                </div>
+                
+                <div class="filters-bar">
+                    <div class="search-box">
+                        <input type="text" placeholder="Pesquisar...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="pending">Pendentes</button>
+                        <button class="filter-btn" data-filter="completed">Finalizados</button>
+                        <button class="filter-btn" data-filter="canceled">Cancelados</button>
+                    </div>
+                </div>
+                
+                <div class="appointments-table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Data e Hora</th>
+                                <th>Paciente</th>
+                                <th>Médico</th>
+                                <th>Especialidade</th>
+                                <th>Motivo</th>
+                                <th>Estado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td>01/06/2025 09:00</td>
+                                <td>Ana Silva</td>
+                                <td>Dr. Manuel Santos</td>
+                                <td>Cardiologia</td>
+                                <td>Consulta de rotina</td>
+                                <td><span class="status pending">Pendente</span></td>
+                                <td class="actions">
+                                    <button class="action-btn complete" title="Marcar como finalizado"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn pending" title="Marcar como pendente"><i class="fas fa-clock"></i></button>
+                                    <button class="action-btn cancel" title="Cancelar"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <td>01/06/2025 15:30</td>
+                                <td>Paulo Ribeiro</td>
+                                <td>Dr. José Martins</td>
+                                <td>Neurologia</td>
+                                <td>Dores de cabeça</td>
+                                <td><span class="status pending">Pendente</span></td>
+                                <td class="actions">
+                                    <button class="action-btn complete" title="Marcar como finalizado"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn pending" title="Marcar como pendente"><i class="fas fa-clock"></i></button>
+                                    <button class="action-btn cancel" title="Cancelar"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02/06/2025 09:15</td>
+                                <td>Luísa Ferreira</td>
+                                <td>Dra. Carla Sousa</td>
+                                <td>Pediatria</td>
+                                <td>Consulta infantil</td>
+                                <td><span class="status completed">Finalizado</span></td>
+                                <td class="actions">
+                                    <button class="action-btn complete" title="Marcar como finalizado"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn pending" title="Marcar como pendente"><i class="fas fa-clock"></i></button>
+                                    <button class="action-btn cancel" title="Cancelar"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</html>
+<script src="js/agendamentos.js"></script>

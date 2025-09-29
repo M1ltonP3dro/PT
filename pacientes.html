@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeAgenda - Pacientes</title>
+    <link rel="stylesheet" href="pacientes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="admin-panel">
+    <div class="admin-sidebar">
+      <div class="admin-logo">
+        Saúde<span>Agenda</span>
+      </div>
+
+      <div class="admin-user">
+        <div class="admin-user-info">
+          <h4>Dr. Benedito Kapolo</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <ul>
+          <li>
+            <i class="nav-icon">📅</i>
+            <span>Agendamentos</span>
+          </li>
+         
+          <li>
+            <i class="nav-icon">👨‍⚕</i>
+            <span>Profissionais</span>
+          </li>
+          <li class="active">
+            <i class="nav-icon">👥</i>
+            <span>Pacientes</span>
+          </li>
+        
+        </ul>
+      </nav>
+
+      <div class="admin-logout">
+        <button class="logout-button">
+          <i class="logout-icon">🚪</i>
+          <span>Sair</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-main">
+      <header class="admin-header">
+        <div class="header-actions">
+          <div class="notification-bell">
+            🔔
+            <span class="notification-badge">3</span>
+          </div>
+        </div>
+      </header>  
+      
+      <div class="content-wrapper">
+        <div class="content-header">
+          <h2>Pacientes</h2>
+          <button class="add-button" id="add-patient-btn"><i class="fas fa-plus"></i> Novo Paciente</button>
+        </div>
+        
+        <div class="search-filter-container">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquisar paciente...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          
+          <div class="filter-buttons">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Masculino</button>
+            <button class="filter-btn">Feminino</button>
+          </div>
+        </div>
+        
+        <div class="patients-container">
+          <table class="patients-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Género</th>
+                <th>Contacto</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                <td>Ana Silva</td>
+                <td>15/03/1985</td>
+                <td>Feminino</td>
+                <td>+244 923 456 789</td>
+                <td>Rua das Flores, 123, Luanda</td>
+                <td>01/06/2025</td>
+                <td class="actions">
+                  <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>João Pereira</td>
+                <td>22/07/1990</td>
+                <td>Masculino</td>
+                <td>+244 912 345 678</td>
+                <td>Av. Principal, 456, Luanda</td>
+                <td>01/06/2025</td>
+                <td class="actions">
+                  <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Maria Fernandes</td>
+                <td>10/11/1978</td>
+                <td>Feminino</td>
+                <td>+244 934 567 890</td>
+                <td>Rua do Comércio, 789, Luanda</td>
+                <td>01/06/2025</td>
+                <td class="actions">
+                  <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Carlos Oliveira</td>
+                <td>05/04/1982</td>
+                <td>Masculino</td>
+                <td>+244 956 789 012</td>
+                <td>Av. Central, 321, Luanda</td>
+                <td>01/06/2025</td>
+                <td class="actions">
+                  <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Paulo Ribeiro</td>
+                <td>18/09/1995</td>
+                <td>Masculino</td>
+                <td>+244 967 890 123</td>
+                <td>Rua Nova, 654, Luanda</td>
+                <td>01/06/2025</td>
+                <td class="actions">
+                  <button class="action-btn view" title="Ver detalhes"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      <!-- Modal para ver detalhes do paciente -->
+      <div class="modal" id="patient-details-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Detalhes do Paciente</h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="patient-details">
+              <div class="patient-header">
+                <h4>Ana Silva</h4>
+                <span class="patient-id">ID: 12345</span>
+              </div>
+              
+              <div class="details-grid">
+                <div class="detail-item">
+                  <span class="detail-label">Data de Nascimento</span>
+                  <span class="detail-value">15/03/1985</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Idade</span>
+                  <span class="detail-value">40 anos</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Género</span>
+                  <span class="detail-value">Feminino</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Contacto</span>
+                  <span class="detail-value">+244 923 456 789</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Email</span>
+                  <span class="detail-value">ana.silva@email.com</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Endereço</span>
+                  <span class="detail-value">Rua das Flores, 123, Luanda</span>
+                </div>
+              </div>
+              
+              <div class="medical-info">
+                <h5>Informações Médicas</h5>
+                <p>Paciente com histórico de hipertensão. Alérgica a penicilina.</p>
+              </div>
+              
+              <div class="appointment-history">
+                <h5>Histórico de Consultas</h5>
+                <table class="history-table">
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Médico</th>
+                      <th>Especialidade</th>
+                      <th>Motivo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>01/06/2025</td>
+                      <td>Dr. Manuel Santos</td>
+                      <td>Cardiologia</td>
+                      <td>Consulta de rotina</td>
+                    </tr>
+                    <tr>
+                      <td>15/05/2025</td>
+                      <td>Dra. Sofia Almeida</td>
+                      <td>Oftalmologia</td>
+                      <td>Exame de vista</td>
+                    </tr>
+                    <tr>
+                      <td>03/04/2025</td>
+                      <td>Dr. Manuel Santos</td>
+                      <td>Cardiologia</td>
+                      <td>Dores no peito</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="btn btn-cancel">Fechar</button>
+                <button type="button" class="btn btn-primary">Nova Consulta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+<script src="js/pacientes.js"></script>

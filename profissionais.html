@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeAgenda - Profissionais</title>
+    <link rel="stylesheet" href="profissionais.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="admin-panel">
+    <div class="admin-sidebar">
+      <div class="admin-logo">
+        Saúde<span>Agenda</span>
+      </div>
+
+      <div class="admin-user">
+        <div class="admin-user-info">
+          <h4>Dr. Benedito Kapolo</h4>
+          <p>Administrador</p>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <ul>
+          <li>
+          
+            <span>Agendamentos</span>
+          </li>
+         
+          <li class="active">
+        
+            <span>Profissionais</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="admin-logout">
+        <button class="logout-button">
+          <span>Sair</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="admin-main">
+      <header class="admin-header">
+        <div class="header-actions">
+          <div class="notification-bell">
+            🔔
+            <span class="notification-badge">3</span>
+          </div>
+        </div>
+      </header>  
+      
+      <div class="content-wrapper">
+        <div class="content-header">
+          <h2>Profissionais</h2>
+          <button class="add-button" id="add-professional-btn"><i class="fas fa-plus"></i> Novo Profissional</button>
+        </div>
+        
+        <div class="search-filter-container">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Pesquisar profissional...">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          
+          <div class="filter-buttons">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Cardiologia</button>
+            <button class="filter-btn">Dermatologia</button>
+            <button class="filter-btn">Ortopedia</button>
+          </div>
+        </div>
+        
+        <div class="professionals-container">
+          <table class="professionals-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Especialidade</th>
+                <th>Horários</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                <td>Dr. Manuel Santos</td>
+                <td>Cardiologia</td>
+                <td>Seg, Qua, Sex</td>
+                <td>09:00 - 17:00</td>
+               
+                <td class="actions">
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn schedule" title="Horários"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dra. Luísa Mendes</td>
+                <td>Dermatologia</td>
+                <td>Ter, Qui</td>
+                <td>08:00 - 16:00</td>
+               
+                <td class="actions">
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn schedule" title="Horários"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dr. António Costa</td>
+                <td>Ortopedia</td>
+                <td>Seg, Ter, Qui</td>
+                <td>10:00 - 18:00</td>
+               
+                <td class="actions">
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn schedule" title="Horários"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dra. Sofia Almeida</td>
+                <td>Oftalmologia</td>
+                <td>Qua, Sex</td>
+                <td>09:00 - 15:00</td>
+                <td class="actions">
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn schedule" title="Horários"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dr. José Martins</td>
+                <td>Neurologia</td>
+                <td>Seg, Qua, Sex</td>
+                <td>13:00 - 19:00</td>
+               
+                <td class="actions">
+                  <button class="action-btn edit" title="Editar"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn schedule" title="Horários"><i class="fas fa-calendar-alt"></i></button>
+                  <button class="action-btn delete" title="Eliminar"><i class="fas fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+
+      
+      <!-- Modal para adicionar/editar profissional -->
+      <div class="modal" id="professional-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Adicionar Profissional</h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="professional-form" onsubmit="return inserirMedico()">
+
+              <div class="form-group">
+                <label for="prof-name">Nome</label>
+                <input type="text" id="prof-name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-email">Email</label>
+                <input type="email" id="prof-email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-name">Telefone</label>
+                <input type="number" id="prof-phone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-name">Data de nascimento</label>
+                <input type="date" id="prof-birth" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="prof-specialty">Especialidade</label>
+                <select id="prof-specialty" required>
+                  <option value="">Selecione uma especialidade</option>
+                  <option value="cardiologia">Cardiologia</option>
+                  <option value="dermatologia">Dermatologia</option>
+                  <option value="ortopedia">Ortopedia</option>
+                  <option value="oftalmologia">Oftalmologia</option>
+                  <option value="neurologia">Neurologia</option>
+                  <option value="pediatria">Pediatria</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="prof-gender">Gênero</label>
+                <select id="prof-gender" required>
+                  <option value="">Selecione uma especialidade</option>
+                  <option value="masculino">masculino</option>
+                  <option value="feminino">feminino</option>
+                </select>
+              </div>
+              
+              <div class="form-actions">
+                <button type="button" class="btn btn-cancel">Cancelar</button>
+                <button type="submit" class="btn btn-save">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal para gerenciar horários -->
+      <div class="modal" id="schedule-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Horários Disponíveis - <span id="doctor-name">Dr. Manuel Santos</span></h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="schedule-tabs">
+              <button class="tab-btn active" data-day="seg">Segunda</button>
+              <button class="tab-btn" data-day="ter">Terça</button>
+              <button class="tab-btn" data-day="qua">Quarta</button>
+              <button class="tab-btn" data-day="qui">Quinta</button>
+              <button class="tab-btn" data-day="sex">Sexta</button>
+            </div>
+            
+            <div class="schedule-content">
+              <div class="time-slots">
+                <div class="time-slot">
+                  <span>09:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>10:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>11:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>12:00</span>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>13:00</span>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>14:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>15:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>16:00</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="time-slot">
+                  <span>17:00</span>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-cancel">Cancelar</button>
+              <button type="button" class="btn btn-save">Salvar Horários</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+<script>
+window.onload = function () {
+  function abrirModal(modal) {
+    modal.style.display = 'flex'
+  }
+
+  function fecharModal(modal) {
+    modal.style.display = 'none'
+  }
+
+  botaoAdicionar = document.getElementById('add-professional-btn')
+  modalProfissional = document.getElementById('professional-modal')
+  modalHorario = document.getElementById('schedule-modal')
+
+  botoesEditar = document.querySelectorAll('.action-btn.edit')
+  botoesHorario = document.querySelectorAll('.action-btn.schedule')
+  botoesFechar = document.querySelectorAll('.close-modal')
+  botoesCancelar = document.querySelectorAll('.btn-cancel')
+
+  botaoAdicionar.onclick = function () {
+    abrirModal(modalProfissional)
+  }
+
+  botoesEditar.forEach(function (btn) {
+    btn.onclick = function () {
+      abrirModal(modalProfissional)
+    }
+  })
+
+  botoesHorario.forEach(function (btn) {
+    btn.onclick = function () {
+      abrirModal(modalHorario)
+    }
+  })
+
+  botoesFechar.forEach(function (btn) {
+    btn.onclick = function () {
+      modal = btn.closest('.modal')
+      fecharModal(modal)
+    }
+  })
+
+  botoesCancelar.forEach(function (btn) {
+    btn.onclick = function () {
+      modal = btn.closest('.modal')
+      fecharModal(modal)
+    }
+  })
+
+  window.onclick = function (evento) {
+    if (evento.target.classList.contains('modal')) {
+      fecharModal(evento.target)
+    }
+  }
+}
+</script>
+<script src="js/profissionais.js"></script>
